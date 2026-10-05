@@ -30,21 +30,21 @@ using Aqua
         @test isreal(ijk)
         @test @inferred(real(ijk)) === -1
         @test ijk === @inferred(-one(i))
-        @test @inferred(i*j) === k
+        @test @inferred(i*j) == k
         @test @inferred(j*i) === -k
-        @test @inferred(j*k) === i
+        @test @inferred(j*k) == i
         @test @inferred(k*j) === -i
-        @test @inferred(k*i) === j
+        @test @inferred(k*i) == j
         @test @inferred(i*k) === -j
     end
 
-    @test @inferred(big(AbstractQuaternion{Bool}))   === AbstractQuaternion{BigInt}
-    @test @inferred(big(AbstracQuaternion{UInt}))    === AbstracQuaternion{BigInt}
-    @test @inferred(big(AbstracQuaternion{Float16})) === AbstracQuaternion{BigFloat}
+    @test @inferred(big(AbstractQuaternion{Bool}))    === AbstractQuaternion{BigInt}
+    @test @inferred(big(AbstractQuaternion{UInt}))    === AbstractQuaternion{BigInt}
+    @test @inferred(big(AbstractQuaternion{Float16})) === AbstractQuaternion{BigFloat}
 
-    @test @inferred(big(UnitQuaternion{Bool}))    === UnitQuaternion{BigInt}
-    @test @inferred(big(UnitQuaternion{Int16}))   === UnitQuaternion{BigInt}
-    @test @inferred(big(UnitQuaternion{Float32})) === UnitQuaternion{BigFloat}
+    @test @inferred(big(Versor{Bool}))    === Versor{BigInt}
+    @test @inferred(big(Versor{Int16}))   === Versor{BigInt}
+    @test @inferred(big(Versor{Float32})) === Versor{BigFloat}
 
     @test @inferred(big(Quaternion{Bool}))    === Quaternion{BigInt}
     @test @inferred(big(Quaternion{UInt64}))  === Quaternion{BigInt}

@@ -3,11 +3,11 @@
 Package `QuaternionNumbers` provides quaternions whose instances are `Number`s.
 
 The package exports 3 types (`AbstractQuaternion{T} <: Number`, `Quaternion{T} <:
-AbstractQuaternion{T}` and `UnitQuaternion{T} <: AbstractQuaternion{T}`, with `T <: Real`
-the type of the components of the quaternion) and 2 functions:
+AbstractQuaternion{T}` and `Versor{T} <: AbstractQuaternion{T}`, with `T <: Real` the type
+of the components of the quaternion) and 2 functions:
 
 * `quaternion(args...)::Quaternion` builds a quaternion from arguments `args...`.
 
-* `normalize(q::AbstractQuaternion)::UnitQuaternion` yields the unit quaternion `q/abs(q)`.
+* `normalize(q::AbstractQuaternion)::Versor` yields the unit quaternion `q/abs(q)`.
 
 The scalar and vector parts of a quaternion `q` are given by `real(q)` and `imag(q)`.
